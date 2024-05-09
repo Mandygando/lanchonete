@@ -2,10 +2,7 @@ import Produto from "../models/produto.js"
 
 export default class ProdutosController {
     async index(){
-        return await Produto.all()
+        return await Produto.query().where("tipoId",2)
     }
 
-    async store(){
-        return [1,2,3]
-    }
 }

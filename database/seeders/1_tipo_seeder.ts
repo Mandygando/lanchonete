@@ -9,7 +9,7 @@ export default class extends BaseSeeder {
       {nome: 'Hamburguer'},
       {nome: 'Sobremesas'},
       {nome: 'Hot Dog'},
-      {nome: 'Bebidas'},
+      {nome: 'Poções'},
     ])
 
   }
