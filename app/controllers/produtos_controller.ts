@@ -4,14 +4,11 @@ import Produto from "#models/produto";
 
 export default class ProdutosController {
     async index({request}: HttpContext){
-        
-        // http://localhost:3333/produtos?page=1&perPage=5
 
         const page = request.input('page', 1)
         const perPage = request.input('perPage', 10)
 
         return await Produto.query().paginate(page, perPage)
-        // return await Produto.query()
     };
 
 
@@ -34,15 +31,12 @@ export default class ProdutosController {
         const dados = request.only(["nome", "preco", "tamanho","tipoId" ])
         
         produto.merge(dados)
-    
         return await produto.save()
     };
 
 
     async destroy({params}: HttpContext) {
-
         const produto =  await Produto.findOrFail(params.id)
-
         await produto.delete()
 
         return {msg:'registro deletado com sucesso', produto}
