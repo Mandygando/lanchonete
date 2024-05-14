@@ -6,6 +6,9 @@ export default class Comanda extends BaseModel {
   declare id: number
 
   @column()
+  declare nome: string
+
+  @column()
   declare mesa: string
 
   @column()
@@ -16,12 +19,6 @@ export default class Comanda extends BaseModel {
 
   @column()
   declare formaPagamentoId: number
-
-  @column()
-  declare dataPagamento: string
-
-  @column()
-  declare data: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
