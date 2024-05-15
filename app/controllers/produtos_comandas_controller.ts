@@ -1,7 +1,7 @@
 import ProdutoComanda from "#models/produtos_comanda";
 import { HttpContext } from "@adonisjs/core/http";
 
-export default class ProdutoComandaController {
+export default class ProdutosComandasController {
 
     async index({ request }: HttpContext) {
         const page = request.input('page', 1)
