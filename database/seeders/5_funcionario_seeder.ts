@@ -3,7 +3,7 @@ import { BaseSeeder } from '@adonisjs/lucid/seeders'
 
 export default class extends BaseSeeder {
   async run() {
-    await Funcionario.createMany([
+     await Funcionario.createMany([
       {
         "nome": "Pedro Oliveira",
         "cpf": "111.222.333-44",

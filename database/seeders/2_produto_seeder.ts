@@ -3,7 +3,7 @@ import Produto from '../../app/models/produto.js'
 
 export default class extends BaseSeeder {
   async run() {
-    return await Produto.createMany([
+     await Produto.createMany([
       {nome: 'Fanta-Uva',preco: 6.5, tamanho:"300ml", tipoId:1},
       {nome: 'Fanta-Laranja',preco: 6.5, tamanho:"300ml",tipoId:1},
       {nome: 'Coca-cola 1L',preco: 10, tamanho:"1L",tipoId:1},
