@@ -17,6 +17,7 @@ import FuncionariosController from '#controllers/funcionarios_controller'
 import ComandasController from '#controllers/comandas_controller'
 import ProdutosComandasController from '#controllers/produtos_comandas_controller'
 import ProdutoIngredientesController from '#controllers/produto_ingredientes_controller'
+import FormaPagamentoController from '#controllers/forma_pagamentos_controller'
 
 router.get('/', async () => {
   return {
@@ -28,6 +29,7 @@ router.resource('/produtos', ProdutosController).apiOnly()
 router.resource('/tipos', TiposController).apiOnly()
 router.resource('/ingredientes', IngredientesController).apiOnly()
 router.resource('/cargos', CargosController).apiOnly()
+router.resource('/forma_pagamentos', FormaPagamentoController).apiOnly()
 router.resource('/clientes', ClientesController).apiOnly()
 router.resource('/funcionarios', FuncionariosController).apiOnly()
 router.resource('/comandas', ComandasController).apiOnly()
