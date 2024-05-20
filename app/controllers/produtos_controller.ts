@@ -8,12 +8,22 @@ export default class ProdutosController {
         const page = request.input('page', 1)
         const perPage = request.input('perPage', 10)
 
-        return await Produto.query().paginate(page, perPage)
+        return await Produto.query()
+                            .preload('tipo')  
+                            .preload('ingrediente')  
+                            .paginate(page, perPage)
     };
 
 
     async show({params}: HttpContext) {
-        return await Produto.findOrFail(params.id)
+        //return await (await Produto.findOrFail(params.id)).preload('tipo')
+
+        return await Produto.query()
+                            .where('id', params.id)
+                            .preload('tipo')
+                            .preload('ingrediente')
+                            .first()
+                            
     };
 
 
